@@ -1,24 +1,20 @@
-function calculateIdealWeight() {
-    const genderInput = document.getElementById('gender');
-    const heightInput = document.getElementById('height');
-    const outputDiv = document.getElementById('output');
+function calcularMedia() {
+    const matricula = document.getElementById('matricula').value;
+    const nome = document.getElementById('nome').value;
+    const nota1 = parseFloat(document.getElementById('nota1').value);
+    const nota2 = parseFloat(document.getElementById('nota2').value);
+    const nota3 = parseFloat(document.getElementById('nota3').value);
+    const nota4 = parseFloat(document.getElementById('nota4').value);
 
-    const gender = genderInput.value.toUpperCase();
-    const height = parseFloat(heightInput.value.replace(',', '.'));
-
-    if ((gender === 'M' || gender === 'F') && !isNaN(height)) {
-        const idealWeight = (gender === 'M') ? idealHomem(height) : idealMulher(height);
-
-        outputDiv.innerHTML = `Seu peso ideal é: ${idealWeight.toFixed(2)} kilos.`;
-    } else {
-        alert("Por favor, insira valores válidos.");
-    }
+    const media = calculo(nota1, nota2, nota3, nota4);
+    mostrarResultado(nome, matricula, media);
 }
 
-function idealHomem(pAltH) {
-    return (72.7 * pAltH) - 58;
+function calculo(n1, n2, n3, n4) {
+    return (n1 + n2 + n3 + n4) / 4;
 }
 
-function idealMulher(pAltF) {
-    return (62.1 * pAltF) - 44.7;
+function mostrarResultado(nome, matricula, media) {
+    const resultadoDiv = document.getElementById('resultado');
+    resultadoDiv.innerHTML = `<p>O aluno(a) ${nome} com matrícula ${matricula} tem ${media.toFixed(1)} de média.</p>`;
 }

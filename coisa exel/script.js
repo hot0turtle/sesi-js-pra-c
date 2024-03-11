@@ -1,14 +1,16 @@
-function AddItem(){
-    var nome = document.getElementById("nome")
-    var valor = document.getElementById("valor")
-    var quantidade = document.getElementById("quantidade")
+function adicionarItem(){
+    var nome = document.getElementById("nome").value;
+    var valor = document.getElementById("valor").value; 
+    var quantidade = document.getElementById("quantidade").value; 
 
-    if(!nome || !valor || !quantidade){
-        alert("prencha todos os quadrado")  
+    //validar se os inputs nao estao vazios
+    if(!nome || !valor || !quantidade ){
+        alert("preencha todos os inputs")
         return;
-    }else{
-        console.log("sei la ")
     }
 
+    //CRIAR A LINHA DA TABELA E PREENCHER COM O VALOR DIGITADO
+    //primeira linha da tabela [0]
+    var tabela = document.getElementById("tabela").getElementsByTagName("tbody")[0];
 
 }

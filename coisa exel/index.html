@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <title>Table to Excel</title>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
 </head>
-
 <body>
-    <h1>Tabela Exel</h1>
+    <h1>Tabela para Excel</h1>
     <div>
-        <input type="text" id="nome" placeholder="nome">
-        <input type="number" id="valor" placeholder="valor">
-        <input type="number" id="quantidade" placeholder="quantidade">
+        <input type="text" id="nome" placeholder="Insira uma desc">
+        <input type="number" id="valor" placeholder="Insira um valor">
+        <input type="number" id="quantidade" placeholder="Insira uma quantidade">
     </div>
     <br>
     <div>
-        <button onclick="AddItem()">Adicionar tabela</button>
+        <button onclick="adicionarItem()">Adicionar a tabela</button>
     </div>
+    <br>
     <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>nome</th>
-                    <th>valor</th>
-                    <th>quantidade</th>
-                </tr>
-            </thead>
-            <tbody class="tabela">
+        <table id="tabela">
 
-            </tbody>
-        </table>
+           <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Quantidade</th>
+            </tr>
+           </thead>
+           <tbody class="tabelinha">
+
+           </tbody>
+          </table>
     </div>
+    <br>
     <div>
-        <!-- <button onclick="ExelMoment()">Manda pro Exel</button> -->
+        <button onclick="exportarParaExcel()">Exportar para Excel</button>
     </div>
 </body>
-
 </html>
